@@ -6,9 +6,9 @@ pub fn solve(input: &str) -> String {
 	input
 		.lines()
 		.map(|l| {
-			// collect digit characters
-			let digits:Vec<char> = l.chars().filter(|c| c.is_ascii_digit()).collect();
-			// combine first+last digit chars into a u32
+			// collect digits
+			let digits:Vec<&str> = l.matches(char::is_numeric).collect();
+			// combine first+last digits into a u32
 			if let (Some(f),Some(l)) = (digits.first(),digits.last()) {
 				format!("{f}{l}").parse::<u32>().unwrap()
 			} else {
@@ -22,7 +22,7 @@ pub fn solve(input: &str) -> String {
 
 #[cfg(test)]
 mod tests {
-	use crate::day01::solve;
+	use super::solve;
 	use pretty_assertions::assert_str_eq;
 	const EXPECTED : &str = "142";
 	const INPUT : &str =
