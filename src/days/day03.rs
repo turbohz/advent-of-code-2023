@@ -150,8 +150,8 @@ r###"
 ...$.*....
 .664.598..
 "###.trim_start();
-		const EXPECTED : &str = "4361";
+		let expected : &str = "4361";
 		let actual = solve(input);
-		assert_str_eq!(actual, EXPECTED);
+		assert_str_eq!(actual, expected);
 	}
 }

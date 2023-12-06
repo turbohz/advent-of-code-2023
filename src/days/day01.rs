@@ -24,17 +24,18 @@ pub fn solve(input: &str) -> String {
 mod tests {
 	use super::solve;
 	use pretty_assertions::assert_str_eq;
-	const EXPECTED : &str = "142";
-	const INPUT : &str =
-r###"1abc2
+
+	#[test]
+	fn test_solve() {
+		let input : &str =
+r###"
+1abc2
 pqr3stu8vwx
 a1b2c3d4e5f
 treb7uchet
-"###;
-
-	#[test]
-	fn test() {
-		let actual = solve(INPUT);
-		assert_str_eq!(actual, EXPECTED);
+"###.trim_start();
+		let expected : &str = "142";
+		let actual = solve(input);
+		assert_str_eq!(actual, expected);
 	}
 }
