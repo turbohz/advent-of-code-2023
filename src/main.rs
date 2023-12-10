@@ -12,6 +12,7 @@ fn main()->Result<(),Box<dyn Error>> {
 	aoc_magic!(&cookie, 2023:4:1, day04::solve)?;
 	aoc_magic!(&cookie, 2023:5:1, day05::solve)?;
 	aoc_magic!(&cookie, 2023:6:1, day06::solve)?;
+	aoc_magic!(&cookie, 2023:7:1, day07::solve)?;
 	println!("All done!");
 	Ok(())
 }
